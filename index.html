@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snowman</title>
+
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            text-align: center;
+        }
+
+        .container {
+            width: 650px;
+            height: 500px;
+            background-color: rgba(212, 37, 66);
+            position: relative;
+            z-index: -19;
+        }
+
+        .container .hat {
+            background-color: black;
+            width: 65px;
+            height: 65px;
+            position: absolute;
+            top: 100px;
+            left: 45%;
+            rotate: 8deg;
+        }
+        
+        .container .hat .hat-inside {
+            background-color: white;
+            position: absolute;
+            width: 65px;
+            height: 11px;
+            top: 22px;
+        }
+
+        .container .hat::after {
+            content: '';
+            position: absolute;
+            top: 65px;
+            left: -10px;
+            border-style: solid;
+            border-width: 10px 85px 0px 0px;
+            border-color: black ;
+        }
+
+        .container .body {
+            position: absolute;
+            width:400px ;
+            height: 400px;
+            position: relative;
+            left: 25%;
+        }
+
+        .container .body .face {
+            background-color: white;
+            border-radius: 100%;
+            width: 85px;
+            height: 85px;
+            position: absolute;
+            top: 164px;
+            left: 112px;
+            z-index: -2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .container .body .face .eye {
+            margin-top: 25px;
+            border-radius: 100%;
+            background-color: black;
+            width: 15px;
+            height: 15px;
+        }
+
+        .container .body .nose {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 70px solid transparent;
+            border-bottom: 15px solid orange;
+            position: absolute;
+            border-radius: 150px 0 40px;
+            top: 205px ;
+            left: 147px ;
+            animation: size 3s 2s ease-in-out;
+            animation-iteration-count: infinite;
+            transform-origin: top left;
+            z-index: 1000;
+        }
+
+        @keyframes size {
+            0% {
+                border-right: 70px solid transparent;
+                rotate: 0;
+            }
+            50% {
+                border-right: 170px solid transparent;
+                rotate: 10deg;
+            }
+            100% {
+                border-right: 70px solid transparent;
+                translate: 0;
+            }
+        }
+
+        .container .body .neck {
+            border: 4px rgba(212, 37, 66) solid;
+            width: 90px;
+            height: 16px;
+            border-radius: 20px;
+            background-color: orange;
+            position: absolute;
+            top: 230px;
+            left: 105px;
+        }
+
+        .container .body .lowerbody {
+            background-color: white;
+            border-radius: 100%;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 241px;
+            left: 80px;
+            z-index: -2;
+        }
+
+        .body .branchR .branchR1 {
+        position: absolute;
+        background-color: #982b0e;
+        width: 10px;
+        height: 80px;
+        top: 170px;
+        left: 230px; 
+        transform: rotate(45deg);
+        border-radius: 5px;
+        }
+
+        .body .branchR .branchR2 {
+        position: absolute;
+        background-color: #982b0e;
+        width: 10px;
+        height: 30px;
+        top: 170px;
+        left: 240px; 
+        transform: rotate(-15deg);
+        }
+
+        .body .branchR .branchR3 {
+        position: absolute;
+        background-color: #982b0e;
+        width: 10px;
+        height: 30px;
+        top: 185px;
+        left: 255px; 
+        transform: rotate(108deg);
+        }
+
+        .body .branchL .branchL1 {
+        position: absolute;
+        background-color: #982b0e;
+        width: 10px;
+        height: 80px;
+        top: 170px;
+        left: 230px; 
+        transform: rotate(45deg);
+        border-radius: 5px;
+        }
+
+        .body .branchL .branchL2 {
+        position: absolute;
+        background-color: #982b0e;
+        width: 10px;
+        height: 30px;
+        top: 170px;
+        left: 240px; 
+        transform: rotate(-15deg);
+        }
+
+        .body .branchL .branchL3 {
+        position: absolute;
+        background-color: #982b0e;
+        width: 10px;
+        height: 30px;
+        top: 185px;
+        left: 255px; 
+        transform: rotate(108deg);
+        }
+
+        .body .branchL{
+            position: absolute;
+            top: 45px;
+            left: 330px;
+            transform: rotateY(180deg) ;
+        }
+
+        .body .branchR{
+            position: absolute;
+            top: 45px;
+            left: -25px;
+            animation: hello 2s 2s infinite  ;
+            transform-origin: 202px 247px;
+        }
+
+        @keyframes hello {
+            0%  {
+                transform: rotateZ(-5deg);
+            }
+            50%  {
+                transform: rotateZ(10deg) scale(1.1);
+            }
+            100%  {
+                transform: rotateZ(-5deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="hat">
+            <div class="hat-inside"></div>
+        </div>
+        <div class="body">
+            <div class="face">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+            <div class="nose"></div>
+            <div class="neck"></div>
+            <div class="lowerbody"></div>
+            <div class="branchR">
+                <div class="branchR1"></div>
+                <div class="branchR2"></div>
+                <div class="branchR3"></div>
+            </div>
+            <div class="branchL">
+                <div class="branchL1"></div>
+                <div class="branchL2"></div>
+                <div class="branchL3"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
